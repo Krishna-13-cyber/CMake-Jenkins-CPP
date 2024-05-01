@@ -2,15 +2,8 @@ def groovyScript
 def os
 
 pipeline {
-    //agent { label 'CROSS-PLATFORM' }
-    agent {
-        node {
-            label 'CROSS-PLATFORM'
-        }
-    }
-    parameters {
-        booleanParam(name: "RELEASE", defaultValue: false)
-    }
+    agent any
+
     stages {
         stage("Init") {
             steps {
